@@ -32,24 +32,24 @@ Create chart name and version as used by the chart label.
 {{- end -}}
 
 {{- define "thanos.store.tlsServer.secretName" -}}
-{{- if (and .Values.store.tlsServer.secretName (ne .Values.store.tlsServer.secretName ""))  -}}
-.Values.store.tlsServer.secretName 
+{{- if (and .Values.store.tlsServer.secretName (ne .Values.store.tlsServer.secretName "")) -}}
+.Values.store.tlsServer.secretName
 {{- else -}}
 {{- include "thanos.fullname" . -}}-thanos-store-tls-server
 {{- end -}}
 {{- end -}}
 
 {{- define "thanos.query.tlsClient.secretName" -}}
-{{- if (and .Values.query.tlsClient.secretName (ne .Values.query.tlsClient.secretName ""))  -}}
-.Values.query.tlsClient.secretName 
+{{- if (and .Values.query.tlsClient.secretName (ne .Values.query.tlsClient.secretName "")) -}}
+.Values.query.tlsClient.secretName
 {{- else -}}
 {{- include "thanos.fullname" . -}}-thanos-query-tls-client
 {{- end -}}
 {{- end -}}
 
 {{- define "thanos.query.tlsServer.secretName" -}}
-{{- if (and .Values.query.tlsServer.secretName (ne .Values.query.tlsServer.secretName ""))  -}}
-.Values.query.tlsServer.secretName 
+{{- if (and .Values.query.tlsServer.secretName (ne .Values.query.tlsServer.secretName "")) -}}
+.Values.query.tlsServer.secretName
 {{- else -}}
 {{- include "thanos.fullname" . -}}-thanos-query-tls-server
 {{- end -}}

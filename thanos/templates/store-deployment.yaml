@@ -35,9 +35,6 @@ spec:
             - "store"
             - "--log.level={{ .Values.store.logLevel }}"
             - "--data-dir=/var/thanos/store"
-            {{- if .Values.store.clusterDisabled }}
-            - "--cluster.disable"
-            {{- end }}
             # TODO: this should be removed (deprecated in favor of objstore.config)
             {{- if .Values.s3.enabled }}
             - "--objstore.config-file=/thanos-s3/s3.yaml"
