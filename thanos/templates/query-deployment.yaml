@@ -90,7 +90,7 @@ spec:
       {{- if .Values.query.tlsClient.enabled }}
         - name: {{ include "thanos.fullname" . }}-thanos-query-tls-client
           secret:
-            secretName: "{{ include "thanos.store.tlsClient.secretName" . }}"
+            secretName: "{{ include "thanos.query.tlsClient.secretName" . }}"
       {{- end }}
       {{- if .Values.query.tlsServer.enabled }}
         - name: {{ include "thanos.fullname" . }}-thanos-query-tls-server
